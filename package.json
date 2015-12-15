@@ -1,0 +1,28 @@
+{
+  "name": "simpsrv",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "bower": "^1.7.0",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1",
+    "mongodb": "^2.1.0"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "poststop": "npm run mongostop",
+    "postinstall": "bower install",
+    "mongostart": "mongod --dbpath db",
+    "mongostop": "mongo admin --eval 'db.shutdownServer()'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "eslint-config-airbnb-es5": "^1.0.8",
+    "eslint-plugin-react": "^3.11.3"
+  }
+}
