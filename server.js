@@ -44,10 +44,7 @@ app.get('/users', function (req, res) {
 app.get('/api/:collection/:docId', function (req, res, next) {
     var collection = req.params.collection;
     var docId = req.params.docId;
-
     console.log(collection, docId);
-    console.log(docId);
-    console.log({_id:ObjectId(docId)});
     var cursor = db.collection(collection).find({_id:ObjectId(docId)});
     var data = [];
     cursor.each(function (err, doc) {
@@ -64,7 +61,6 @@ app.get('/api/:collection/:_key/:_value', function (req, res, next) {
     var collection = req.params.collection;
     var _key = req.params._key;
     var _value = req.params._value;
-
     console.log(collection, _key, _value);
     var query = {};
     query[_key] = _value;
